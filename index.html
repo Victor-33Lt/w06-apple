@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>사과 게임 - 숫자 퍼즐</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="game">
+    <header>
+      <h1 class="logo">SUM 10</h1>
+      <div class="subtitle">숫자를 연결해 합계 10을 만들어 보세요!</div>
+    </header>
+
+    <section class="stats">
+      <div class="stat">
+        <span class="stat-label">현재 점수</span>
+        <span class="stat-value" id="score">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">남은 시간</span>
+        <span class="stat-value" id="timer">02:00</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">최고 점수</span>
+        <span class="stat-value" id="best">0</span>
+      </div>
+    </section>
+
+    <section class="board-wrap">
+      <div
+        id="board"
+        class="board"
+        aria-label="8 곱하기 8 숫자 게임판"
+      ></div>
+
+      <div id="overlay" class="overlay" hidden>
+        <h2 id="endTitle">게임 종료!</h2>
+        <p id="endMessage"></p>
+        <button class="primary" id="overlayRestart">
+          다시 플레이
+        </button>
+      </div>
+    </section>
+
+    <div class="message" id="message" aria-live="polite">
+      드래그해서 숫자들을 연결하세요.
+    </div>
+
+    <div class="actions">
+      <button class="primary" id="restart">새 게임</button>
+      <button class="secondary" id="clear">선택 취소</button>
+    </div>
+
+    <div class="instructions">
+      <strong>게임 방법</strong><br />
+      1. 숫자를 누른 채 인접한 숫자로 드래그하세요.<br />
+      2. 가로, 세로 또는 대각선으로 인접한 숫자만 연결할 수 있습니다.<br />
+      3. 연결한 숫자의 합이 <strong>10</strong>이면 제거되고 점수를 얻습니다.<br />
+      4. 숫자 하나당 10점! 2분 안에 최고 점수에 도전하세요.
+    </div>
+  </main>
+</body>
+</html>
